@@ -154,23 +154,24 @@ const caseStudy = {
 
           <div class="relative flex justify-center">
             <script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
-            <div class="relative w-full max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-white/95 p-2 shadow-2xl backdrop-blur dark:bg-gradient-to-b dark:from-[#0f1428] dark:via-[#0b0f1f] dark:to-black">
-              <model-viewer
-                src="/models/dog.glb"
-                ios-src="/models/dog.glb"
-                alt="Llamadevs modelo 3D"
-                camera-controls
-                auto-rotate
-                rotation-per-second="25deg"
-                interaction-prompt="auto"
-                ar
-                tone-mapping="aces"
-                exposure="1"
-                shadow-intensity="0.6"
-                style="width: 100%; height: 480px;"
-                class="w-full rounded-3xl bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900"
-              ></model-viewer>
-            </div>
+            <model-viewer
+              id="llamadevs-model"
+              src="/models/dog.glb"
+              ios-src="/models/dog.glb"
+              alt="Llamadevs modelo 3D"
+              camera-controls
+              auto-rotate
+              autoplay
+              rotation-per-second="25deg"
+              interaction-prompt="auto"
+              ar
+              tone-mapping="aces"
+              exposure="1"
+              shadow-intensity="0.6"
+              animation-loop="infinite"
+              style="width: 100%; max-width: 640px; height: 520px; background: transparent;"
+              class="w-full"
+            ></model-viewer>
           </div>
         </div>
       </div>
@@ -408,3 +409,48 @@ const caseStudy = {
     </section>
   </main>
 </Layout>
+
+<script>
+  if (typeof window !== 'undefined') {
+    const initModelAnimations = () => {
+      const mv = document.querySelector('#llamadevs-model');
+      if (!mv) return;
+      const playAll = () => {
+        const names = mv.availableAnimations || [];
+        names.forEach((name) => {
+          try {
+            mv.play({ animationName: name, repetitions: Infinity });
+          } catch (e) {
+            console.warn('animation play failed', e);
+          }
+        });
+      };
+      mv.addEventListener('load', () => {
+        const names = mv.availableAnimations || [];
+        // activa todas las animaciones disponibles en loop infinito
+        names.forEach((name) => {
+          try {
+            mv.setAttribute('animation-name', name);
+            mv.setAttribute('animation-loop', 'infinite');
+            mv.play({ animationName: name, repetitions: Infinity });
+          } catch (e) {
+            console.warn('animation play failed', name, e);
+          }
+        });
+      }, { once: true });
+      if (mv.modelIsVisible) {
+        const names = mv.availableAnimations || [];
+        names.forEach((name) => {
+          try {
+            mv.setAttribute('animation-name', name);
+            mv.setAttribute('animation-loop', 'infinite');
+            mv.play({ animationName: name, repetitions: Infinity });
+          } catch (e) {
+            console.warn('animation play failed', name, e);
+          }
+        });
+      }
+    };
+    window.addEventListener('DOMContentLoaded', initModelAnimations);
+  }
+</script>
