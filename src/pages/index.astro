@@ -1,0 +1,480 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'llamadevs - Software y SaaS premium para hospitality y retail',
+  description:
+    'Landing premium de llamadevs: estudio de software que construye SaaS para restaurantes, hoteles y retail. Integraciones, soporte 24/7 y entregas listas para produccion.',
+};
+
+const heroStats = [
+  { label: 'Go-live', value: '6-10 semanas' },
+  { label: 'SLAs', value: '99.95% uptime' },
+  { label: 'Soporte', value: '24/7 N1-N3' },
+];
+
+const clients = ['Grupo Cumbre', 'Orion Hotels', 'Alma Retail', 'Nova Foods', 'ServiPOS Cloud', 'Blue Harbor'];
+
+const featureCards = [
+  {
+    icon: 'tabler:bolt',
+    title: 'Go-live acelerado',
+    description: 'Squads mixtos (PM, UX, FE, BE, QA) con entregas quincenales y QA automatizado.',
+  },
+  {
+    icon: 'tabler:shield-lock',
+    title: 'Seguridad y compliance',
+    description: 'Hardening, observabilidad, backups en caliente y privacidad por defecto.',
+  },
+  {
+    icon: 'tabler:devices',
+    title: 'Infra multicanal',
+    description: 'Web, moviles, kioscos y POS con la misma base de diseno y tokens de marca.',
+  },
+  {
+    icon: 'tabler:cloud-upload',
+    title: 'Deploy sin friccion',
+    description: 'Pipelines CI/CD con rollbacks rapidos, feature flags y monitoreo de errores centralizado.',
+  },
+  {
+    icon: 'tabler:credit-card',
+    title: 'Cobros y planes listos',
+    description: 'Stripe o Paddle, limites de uso, trials y facturacion recurrente integrados al producto.',
+  },
+  {
+    icon: 'tabler:sparkles',
+    title: 'AI/Insights aplicados',
+    description: 'Resumenes operativos, deteccion de anomalias y recomendaciones accionables por vertical.',
+  },
+];
+
+const verticals = [
+  {
+    id: 'restaurantes',
+    title: 'Restaurante OS',
+    image:
+      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80',
+    bullets: ['Ordenes omnicanal (salon, delivery, kiosco)', 'Kitchen display system', 'Control de mermas y costos'],
+  },
+  {
+    id: 'hoteles',
+    title: 'Hotel y Villas',
+    image:
+      'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80',
+    bullets: ['PMS + channel manager', 'Check-in sin friccion', 'Upsell de servicios y fidelizacion'],
+  },
+  {
+    id: 'retail',
+    title: 'Retail / POS',
+    image:
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
+    bullets: ['POS offline-first', 'Inventarios en tiempo real', 'Integracion e-commerce y ERPs'],
+  },
+];
+
+const services = [
+  {
+    icon: 'tabler:stack-2',
+    title: 'Producto a medida',
+    description: 'Definicion de alcance, prototipos, diseno de servicio y lanzamiento end-to-end.',
+  },
+  {
+    icon: 'tabler:plug-connected',
+    title: 'Integraciones criticas',
+    description: 'ERPs, pagos, biometria, contabilidad y data warehouses con monitoreo activo.',
+  },
+  {
+    icon: 'tabler:headset',
+    title: 'Operacion y soporte',
+    description: 'Playbooks, NOC, SLAs estrictos, alertas y handoffs directos con tus equipos.',
+  },
+];
+
+const stackItems = [
+  { icon: 'tabler:cloud', label: 'AWS / Vercel' },
+  { icon: 'tabler:database', label: 'Supabase / Postgres' },
+  { icon: 'tabler:brand-react', label: 'Astro / React / Tailwind' },
+  { icon: 'tabler:credit-card', label: 'Stripe / Paddle' },
+  { icon: 'tabler:palette', label: 'Design systems en Figma' },
+  { icon: 'tabler:activity', label: 'Observabilidad y APM' },
+];
+
+const caseStudy = {
+  title: 'Suite omnicanal para cadenas de restaurantes',
+  highlight: '+18% ticket promedio - 6 semanas a produccion',
+  bullets: [
+    'POS offline-first con kioscos de autoservicio y pagos en 1 clic',
+    'Panel de gerencia con alertas de mermas y dashboards por zona',
+    'Integracion contable + delivery partners + facturacion electronica',
+  ],
+  image:
+    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80',
+};
+---
+
+<Layout metadata={metadata}>
+  <main class="bg-page text-default">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -left-16 top-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl"></div>
+        <div class="absolute right-10 top-24 h-64 w-64 rounded-full bg-secondary/25 blur-3xl"></div>
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/70 via-transparent to-transparent dark:from-black/60"></div>
+      </div>
+      <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:pt-14 lg:pt-16">
+        <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div class="space-y-6">
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl text-default dark:text-slate-100">
+              llamadevs:
+              <span class="text-primary">software premium</span> para restaurantes, hoteles y puntos de venta.
+            </h1>
+            <p class="max-w-2xl text-lg text-default dark:text-slate-200">
+              Construimos y operamos SaaS listos para produccion. Experiencia en hospitality, retail y fintech con
+              integraciones complejas, soporte 24/7 y lanzamientos en semanas.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a class="btn btn-primary shadow-lg shadow-primary/40" href="/contact">Agenda demo</a>
+              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/50" href="#stack">
+                Ver stack
+              </a>
+              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/50" href="#casos">
+                Casos reales
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-6 pt-2 text-sm text-default dark:text-slate-200">
+              {heroStats.map((item) => (
+                <div class="flex items-center gap-3 rounded-full border border-white/10 bg-white px-4 py-2 shadow-sm dark:bg-white/5">
+                  <Icon name="tabler:check" class="h-5 w-5 text-primary" />
+                  <span class="font-semibold">{item.label} - {item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white dark:bg-gradient-to-b dark:from-[#10152b] dark:via-[#0c1226] dark:to-[#0a0f22] p-6 shadow-2xl backdrop-blur text-default dark:text-slate-100">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+                  <Icon name="tabler:rocket" class="h-4 w-4" /> Launch deck
+                </span>
+                <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Enterprise</span>
+              </div>
+
+              <div class="mt-5 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+                <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-black/40">
+                  <img
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                    alt="Demo SaaS llamadevs"
+                    loading="lazy"
+                    class="h-48 w-full object-cover object-center opacity-80"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                  <div class="absolute inset-0 flex flex-col justify-end p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-[0.18em] text-slate-200">Demo visual</p>
+                    <p class="text-xl font-semibold text-white leading-snug">Dashboard unificado: billing, soporte y operaciones.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-primary">Multisede</span>
+                      <span class="rounded-full bg-secondary/20 px-3 py-1 text-secondary">Kioscos y POS</span>
+                      <span class="rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-300">Alertas en vivo</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="rounded-2xl border border-white/10 bg-white dark:bg-white/5 p-4">
+                    <p class="text-sm font-semibold text-default dark:text-white">Snapshot de producto</p>
+                    <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-default dark:text-slate-200">
+                      <div class="rounded-xl border border-white/10 bg-white shadow-sm dark:bg-black/40 px-3 py-2">
+                        <p class="font-semibold text-default dark:text-white">MRR (mock)</p>
+                        <p class="text-lg font-bold text-primary">$182k</p>
+                        <span class="text-emerald-600 dark:text-emerald-300">+18% MoM</span>
+                      </div>
+                      <div class="rounded-xl border border-white/10 bg-white shadow-sm dark:bg-black/40 px-3 py-2">
+                        <p class="font-semibold text-default dark:text-white">Activacion</p>
+                        <p class="text-lg font-bold text-default dark:text-white">74%</p>
+                        <span class="text-secondary">+6.2%</span>
+                      </div>
+                      <div class="rounded-xl border border-white/10 bg-white shadow-sm dark:bg-black/40 px-3 py-2">
+                        <p class="font-semibold text-default dark:text-white">Tiempo de deploy</p>
+                        <p class="text-lg font-bold text-default dark:text-white">15 min</p>
+                        <span class="text-emerald-600 dark:text-emerald-300">Blue/green</span>
+                      </div>
+                      <div class="rounded-xl border border-white/10 bg-white shadow-sm dark:bg-black/40 px-3 py-2">
+                        <p class="font-semibold text-default dark:text-white">Tickets resueltos</p>
+                        <p class="text-lg font-bold text-default dark:text-white">92%</p>
+                        <span class="text-emerald-600 dark:text-emerald-300">SLA 24/7</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rounded-2xl border border-white/10 bg-black/40 p-4">
+                    <div class="flex items-center justify-between text-sm text-slate-200">
+                      <span class="inline-flex items-center gap-2 font-semibold">
+                        <Icon name="tabler:road" class="h-5 w-5 text-primary" />
+                        Roadmap de entrega
+                      </span>
+                      <span class="rounded-full bg-secondary/20 px-2 py-1 text-xs font-semibold text-secondary">6-10 semanas</span>
+                    </div>
+                    <div class="mt-4 grid gap-3 text-xs text-slate-200">
+                      <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                        <p class="font-semibold text-white">Fase 1: Descubrimiento</p>
+                        <p>Alcance, riesgos y diseno de servicio.</p>
+                      </div>
+                      <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                        <p class="font-semibold text-white">Fase 2: Build + QA</p>
+                        <p>MVP funcional + pruebas auto + beta cerrada.</p>
+                      </div>
+                      <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                        <p class="font-semibold text-white">Fase 3: Launch</p>
+                        <p>Handover, monitoreo y optimizaciones.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-primary/15 px-3 py-1 text-primary">Soporte 24/7</span>
+                <span class="rounded-full bg-secondary/15 px-3 py-1 text-secondary">PCI & GDPR</span>
+                <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-emerald-300">Autoscaling</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-slate-100">Feature flags</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="bg-page dark:bg-slate-950 pb-12 pt-6 text-muted dark:text-slate-300">
+      <div class="mx-auto max-w-6xl px-4">
+        <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Equipos que ya confian</p>
+        <div class="mt-6 grid grid-cols-2 gap-6 text-lg font-semibold uppercase sm:grid-cols-3 md:grid-cols-6">
+          {clients.map((logo) => (
+            <div class="rounded-xl border border-white/10 bg-white px-4 py-3 text-center text-default shadow-sm dark:bg-white/5 dark:text-slate-100">
+              {logo}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="bg-white dark:bg-slate-900 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="max-w-3xl space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Por que llamadevs</p>
+          <h2 class="text-3xl font-semibold sm:text-4xl">Producto listo para cobrar, no solo prototipos.</h2>
+          <p class="text-lg text-muted">
+            Arquitectura, diseno y operacion pensados para hospitality y retail: multiples sedes, integraciones criticas
+            y soporte continuo.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {featureCards.map((item) => (
+            <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 p-6 shadow-xl backdrop-blur transition hover:-translate-y-1 hover:border-primary/50">
+              <div class="mb-4 inline-flex items-center gap-3 rounded-full bg-primary/10 px-3 py-2 text-sm font-medium">
+                <Icon name={item.icon} class="h-5 w-5 text-primary" />
+                <span>{item.title}</span>
+              </div>
+              <p class="text-muted dark:text-slate-300">{item.description}</p>
+              <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Verticals -->
+    <section id="soluciones" class="bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Soluciones por vertical</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Construido para operar en el mundo real.</h2>
+          </div>
+          <div class="text-muted dark:text-slate-300">
+            Integraciones con pagos, ERPs, channel managers y contabilidad. Control total sobre datos y experiencia.
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          {verticals.map((card) => (
+            <div id={card.id} class="overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 shadow-xl">
+              <div class="relative h-44 overflow-hidden">
+                <img src={card.image} alt={card.title} loading="lazy" class="h-full w-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                <p class="absolute bottom-3 left-4 text-lg font-semibold text-white">{card.title}</p>
+              </div>
+              <div class="space-y-3 p-5">
+                {card.bullets.map((bullet) => (
+                  <p class="flex items-start gap-2 text-default dark:text-slate-200">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                    <span>{bullet}</span>
+                  </p>
+                ))}
+                <a class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary" href="/contact">
+                  Hablar con ventas
+                  <Icon name="tabler:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="bg-white dark:bg-slate-900 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="max-w-3xl space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Servicios</p>
+          <h2 class="text-3xl font-semibold sm:text-4xl">Todo el ciclo: estrategia, delivery y operacion.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          {services.map((item) => (
+            <div class="rounded-2xl border border-white/10 bg-white dark:bg-white/5 p-6 shadow-xl">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15">
+                <Icon name={item.icon} class="h-6 w-6 text-primary" />
+              </div>
+              <p class="text-lg font-semibold">{item.title}</p>
+              <p class="mt-3 text-muted dark:text-slate-300">{item.description}</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary" href="/contact">
+                Agenda un workshop
+                <Icon name="tabler:arrow-right" class="h-4 w-4" />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Stack y entregables</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Diseno, dev y observabilidad en un solo equipo.</h2>
+            <p class="text-lg text-default dark:text-slate-200">
+              Playbooks de seguridad, manuales de soporte y paneles operativos. Documentamos todo y entregamos acceso a
+              repositorios, tableros y monitoreo.
+            </p>
+            <div class="flex flex-wrap gap-3 text-default dark:text-slate-300">
+              {stackItems.map((item) => (
+                <span class="flex items-center gap-2 rounded-full border border-white/15 bg-white px-3 py-2 text-sm shadow-sm dark:bg-white/10">
+                  <Icon name={item.icon} class="h-5 w-5 text-primary" />
+                  {item.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white dark:bg-[#0f1428] p-6 shadow-2xl backdrop-blur">
+            <div class="flex items-center justify-between text-default dark:text-slate-100">
+              <p class="text-sm text-default dark:text-slate-300">Estado de despliegue</p>
+              <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-500 dark:text-emerald-300">Healthy</span>
+            </div>
+            <div class="mt-4 space-y-3 text-sm">
+              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+                <span class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-500" />
+                  Frontend (Astro + React)
+                </span>
+                <span class="font-semibold text-default dark:text-white">Deploy OK</span>
+              </div>
+              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+                <span class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-sky-400" />
+                  Integraciones Stripe / ERP
+                </span>
+                <span class="font-semibold text-default dark:text-white">Sync en curso</span>
+              </div>
+              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+                <span class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-amber-400" />
+                  Monitoreo y alertas
+                </span>
+                <span class="font-semibold text-default dark:text-white">Tuning</span>
+              </div>
+            </div>
+            <div class="mt-6 rounded-2xl border border-white/10 bg-white p-4 text-left text-xs font-mono text-emerald-600 dark:bg-white/5 dark:text-emerald-200">
+              <p class="mb-2 text-muted dark:text-slate-300">Checklist de release</p>
+              <ul class="space-y-1 text-[11px] text-default dark:text-slate-200">
+                <li>1. Feature flags activados</li>
+                <li>2. Backups y rollback test</li>
+                <li>3. Datadog / Sentry configurados</li>
+                <li>4. Manuales de operacion y soporte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+
+    <!-- Case study -->
+    <section id="casos" class="bg-white dark:bg-slate-950 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Caso destacado</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">{caseStudy.title}</h2>
+            <p class="text-lg text-secondary font-semibold">{caseStudy.highlight}</p>
+            <ul class="space-y-2 text-default dark:text-slate-200">
+              {caseStudy.bullets.map((bullet) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a class="btn btn-primary shadow-lg shadow-primary/30" href="/contact">Agendar llamada</a>
+              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40" href="/pricing">
+                Ver planes
+              </a>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/80 dark:bg-black/40 shadow-2xl">
+            <img src={caseStudy.image} alt={caseStudy.title} loading="lazy" class="h-full w-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 space-y-2">
+              <p class="text-sm uppercase tracking-[0.18em] text-muted dark:text-slate-300">Observabilidad</p>
+              <div class="flex gap-3 text-sm">
+                <span class="rounded-full bg-white/10 px-3 py-1 text-white">SLA 99.95%</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-white">Load Balancing</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-white">PCI-ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
+      <div class="mx-auto max-w-5xl px-4">
+        <div class="rounded-3xl border border-white/10 bg-white px-6 py-10 text-center shadow-2xl backdrop-blur dark:bg-[#0f1428]">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Listo para produccion</p>
+          <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">
+            Agenda una demo y llevamos tu producto en semanas, no meses.
+          </h2>
+          <p class="mt-3 text-lg text-default dark:text-slate-200">
+            Cuentanos que vertical necesitas (restaurante, hotel, retail) y armamos un plan con entregas, costos y stack recomendado.
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <a class="btn btn-primary shadow-lg shadow-primary/30" href="/contact">Hablar con ventas</a>
+            <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40" href="/pricing">
+              Ver planes
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

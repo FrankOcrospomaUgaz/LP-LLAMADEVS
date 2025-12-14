@@ -1,0 +1,22 @@
+---
+import { SITE } from 'astrowind:config';
+
+const logoUrl = '/logo_llamadevs.png';
+---
+
+<div class="flex items-center gap-2">
+  <div class="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/10 shadow-lg">
+    <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white/80">LD</span>
+    <img
+      src={logoUrl}
+      alt={SITE?.name ?? 'llamadevs'}
+      loading="lazy"
+      decoding="async"
+      class="relative z-10 h-full w-full object-cover object-center"
+      onerror="this.style.display='none';this.parentElement?.classList.add('bg-gradient-to-br','from-primary','to-secondary');"
+    />
+  </div>
+  <span class="self-center text-2xl md:text-xl font-bold text-default whitespace-nowrap">
+    {(SITE?.name ?? 'llamadevs').toUpperCase()}
+  </span>
+</div>

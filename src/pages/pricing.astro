@@ -1,0 +1,183 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Planes - llamadevs',
+  description:
+    'Planes SaaS en soles y USD para restaurantes, hoteles y retail en Peru. Soporte 24/7, hosting y actualizaciones incluidas.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Planes"
+    title="Planes SaaS por vertical, listos para operar en Peru"
+    subtitle="Precios de referencia en soles (tambien facturamos en USD). Incluye hosting, soporte 24/7 y mejoras continuas."
+  />
+
+  <Prices
+    title="Elige tu vertical"
+    subtitle="Planes mensuales, sin costos ocultos. Consultar descuentos por volumen o contrato anual."
+    prices={[
+      {
+        title: 'Restaurante OS',
+        subtitle: 'POS offline-first, kioscos y delivery integrado',
+        price: 470,
+        period: 'S/ al mes',
+        items: [
+          { description: 'Comandas, KDS y gestion de mesas' },
+          { description: 'Menus, combos y promos por sede' },
+          { description: 'Reportes de costos, mermas e insumos' },
+          { description: 'Pagos locales y facturacion electronica' },
+        ],
+        callToAction: {
+          text: 'Agendar demo',
+          href: '/contact',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Mas vendido',
+      },
+      {
+        title: 'Hotel & Villas',
+        subtitle: 'PMS, channel manager y upsell de servicios',
+        price: 650,
+        period: 'S/ al mes',
+        items: [
+          { description: 'Check-in/out sin friccion' },
+          { description: 'Tarifas, planes y paquetes dinamicos' },
+          { description: 'Upsell de servicios y room service' },
+          { description: 'Pagos, facturacion y conciliacion' },
+        ],
+        callToAction: {
+          text: 'Agendar demo',
+          href: '/contact',
+        },
+      },
+      {
+        title: 'Retail / POS',
+        subtitle: 'Inventarios y e-commerce sincronizado',
+        price: 360,
+        period: 'S/ al mes',
+        items: [
+          { description: 'Inventario en tiempo real y multi-tienda' },
+          { description: 'Integracion ERP y contabilidad' },
+          { description: 'POS con modos online y offline' },
+          { description: 'Reportes y alertas operativas' },
+        ],
+        callToAction: {
+          text: 'Agendar demo',
+          href: '/contact',
+        },
+      },
+    ]}
+  />
+
+  <Features3
+    title="Incluido en todos los planes"
+    subtitle="Infraestructura, soporte y seguridad alineados a clientes en Peru."
+    columns={2}
+    items={[
+      {
+        title: 'Facturacion en soles o USD',
+        description: 'Boleta/factura electronica y monedas multiples.',
+        icon: 'tabler:receipt',
+      },
+      {
+        title: 'Soporte 24/7',
+        description: 'Niveles N1-N3, con SLA y monitoreo continuo.',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Infra en la nube',
+        description: 'AWS / Vercel, con autoscaling y backups.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Integraciones criticas',
+        description: 'Pagos locales, ERP, contabilidad y BI.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Seguridad y compliance',
+        description: 'PCI-ready, privacidad y control de accesos.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Rollbacks y feature flags',
+        description: 'Despliegues seguros con control por sede o canal.',
+        icon: 'tabler:repeat',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <Steps
+    title="Como trabajamos contigo"
+    tagline="Onboarding guiado"
+    isReversed={true}
+    items={[
+      { title: 'Agenda demo', icon: 'tabler:number-1' },
+      { title: 'Descubrimiento y alcance', icon: 'tabler:number-2' },
+      { title: 'Propuesta y contrato', icon: 'tabler:number-3' },
+      { title: 'Integraciones y setup', icon: 'tabler:number-4' },
+      { title: 'Capacitacion y pruebas', icon: 'tabler:number-5' },
+      { title: 'Go-live y monitoreo', icon: 'tabler:number-6' },
+      { title: 'Soporte y mejoras continuas', icon: 'tabler:number-7' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=987&q=80',
+      alt: 'Equipo de implementacion',
+    }}
+  />
+
+  <FAQs
+    title="Preguntas frecuentes"
+    subtitle="Todo lo que necesitas saber antes de contratar."
+    columns={1}
+    items={[
+      {
+        title: 'Pueden facturar en soles y emitir comprobantes electronicos?',
+        description: 'Si, facturamos en PEN o USD y soportamos boleta/factura electronica segun tu RUC.',
+      },
+      {
+        title: 'Incluye hardware o solo software?',
+        description: 'El precio es por software. Podemos cotizar hardware (POS, kioscos, tablets) con partners locales.',
+      },
+      {
+        title: 'Como se maneja soporte y SLA?',
+        description: 'Soporte 24/7 N1-N3 con SLA definido en contrato. Alertas, monitoreo y playbooks incluidos.',
+      },
+      {
+        title: 'Que integraciones ofrecen?',
+        description: 'Pagos locales, facturacion, ERPs, contabilidad, BI y delivery partners. Validamos tu stack en el discovery.',
+      },
+      {
+        title: 'Hay contrato minimo?',
+        description: 'Mensual sin permanencia. Descuentos por contratos trimestrales o anuales.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Listo para suscribirte"
+    subtitle="Cuentanos tu vertical y armamos tu plan con fechas, costos y stack recomendado."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Agendar demo',
+        href: '/contact',
+      },
+      {
+        variant: 'secondary',
+        text: 'Ver stack',
+        href: '/#stack',
+      },
+    ]}
+  />
+</Layout>

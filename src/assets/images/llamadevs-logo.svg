@@ -1,0 +1,19 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="36" fill="url(#g1)"/>
+  <path d="M54 40C54 34.477 58.477 30 64 30H88C103.464 30 116 42.536 116 58V102C116 117.464 103.464 130 88 130H72C61.506 130 53 121.494 53 111V92L54 40Z" fill="white" opacity="0.9"/>
+  <path d="M60 52C60 50.3431 61.3431 49 63 49H92C97.5228 49 102 53.4772 102 59V86C102 92.6274 96.6274 98 90 98H73C65.8203 98 60 92.1797 60 85V52Z" fill="url(#g2)"/>
+  <circle cx="74" cy="65" r="6" fill="#0B1224" opacity="0.9"/>
+  <rect x="70" y="78" width="26" height="6" rx="3" fill="#0B1224" opacity="0.9"/>
+  <path d="M44 108C44 103.582 47.5817 100 52 100H96C100.418 100 104 103.582 104 108V120H44V108Z" fill="#0B1224" opacity="0.8"/>
+  <text x="80" y="144" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Inter, Arial, sans-serif">LLAMADEVS</text>
+  <defs>
+    <linearGradient id="g1" x1="18" y1="12" x2="140" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="60" y1="49" x2="104" y2="97" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+</svg>
