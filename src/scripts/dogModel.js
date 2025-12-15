@@ -39,17 +39,17 @@ const startDogModel = () => {
   container.appendChild(renderer.domElement);
 
   const camera = new PerspectiveCamera(45, 1, 0.1, 100);
-  camera.position.set(0, 1.25, 3.1);
-  camera.lookAt(0, 0.75, 0);
+  camera.position.set(0, 1.35, 3.5);
+  camera.lookAt(0, 0.85, 0);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.08;
-  controls.minDistance = 1.5;
-  controls.maxDistance = 3;
-  controls.target.set(0, 0.75, 0);
+  controls.minDistance = 1.9;
+  controls.maxDistance = 3.8;
+  controls.target.set(0, 0.85, 0);
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.8;
+  controls.autoRotateSpeed = 0.7;
 
   scene.add(new AmbientLight(0xffffff, 1.4));
   const hemi = new HemisphereLight(0xfff7e8, 0xf2e5d6, 1.1);
@@ -84,9 +84,9 @@ const startDogModel = () => {
     camera.updateProjectionMatrix();
 
     if (model) {
-      const responsiveScale = Math.max(1.4, width / 380);
+      const responsiveScale = Math.max(1.05, width / 580);
       model.scale.setScalar(responsiveScale);
-      model.position.set(0, -0.45, 0);
+      model.position.set(0, -0.35, 0);
     }
   };
 
