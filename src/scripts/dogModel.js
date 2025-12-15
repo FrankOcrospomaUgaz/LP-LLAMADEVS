@@ -30,7 +30,7 @@ const startDogModel = () => {
   const renderer = new WebGLRenderer({ antialias: true, alpha: true });
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.toneMapping = ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 1;
   renderer.setClearColor(new Color(0x000000), 0);
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
@@ -51,17 +51,17 @@ const startDogModel = () => {
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.7;
 
-  scene.add(new AmbientLight(0xffffff, 1.4));
-  const hemi = new HemisphereLight(0xfff7e8, 0xf2e5d6, 1.1);
+  scene.add(new AmbientLight(0xffffff, 1));
+  const hemi = new HemisphereLight(0xf5e7d8, 0xd8d0c5, 0.9);
   scene.add(hemi);
 
-  const keyLight = new DirectionalLight(0xffffff, 1.6);
+  const keyLight = new DirectionalLight(0xffffff, 1.35);
   keyLight.position.set(3.2, 5.6, 4.2);
 
-  const fillLight = new DirectionalLight(0xfff3e1, 0.8);
+  const fillLight = new DirectionalLight(0xf2ddc4, 0.6);
   fillLight.position.set(-2.4, 3.2, 2.6);
 
-  const rimLight = new DirectionalLight(0xffffff, 0.6);
+  const rimLight = new DirectionalLight(0xffffff, 0.45);
   rimLight.position.set(0, 4.4, -3.5);
 
   scene.add(keyLight, fillLight, rimLight);
@@ -98,12 +98,11 @@ const startDogModel = () => {
 
       model.traverse((child) => {
         if (child.isMesh && child.material && child.material.color) {
-          child.material.color.multiplyScalar(1.12);
-          child.material.roughness = Math.min(child.material.roughness ?? 0.6, 0.5);
+          child.material.color.multiplyScalar(1.0);
+          child.material.roughness = Math.min(child.material.roughness ?? 0.6, 0.55);
           child.material.metalness = 0;
           if (child.material.emissive) {
-            child.material.emissive.set(0xfff2d5);
-            child.material.emissiveIntensity = 0.08;
+            child.material.emissiveIntensity = 0;
           }
           child.material.needsUpdate = true;
         }
