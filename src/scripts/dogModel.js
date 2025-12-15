@@ -149,9 +149,11 @@ const startDogModel = () => {
     controls.dispose();
     renderer.dispose();
     container.innerHTML = '';
+    container.dataset.initialized = 'false';
   };
 
   window.addEventListener('pagehide', cleanup);
+  window.addEventListener('pageshow', startDogModel, { once: true });
 };
 
 if (document.readyState === 'complete' || document.readyState === 'interactive') {

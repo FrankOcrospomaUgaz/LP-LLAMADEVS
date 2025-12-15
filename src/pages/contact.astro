@@ -5,24 +5,24 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contacto',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Contacto" title="Hablemos de tu software" />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Cuéntanos qué necesitas"
+    subtitle="Somos un equipo de producto y tecnología. Escríbenos sobre tu SaaS, plataforma o app y te respondemos con el siguiente paso."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Nombre',
       },
       {
         type: 'email',
@@ -31,47 +31,45 @@ const metadata = {
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Mensaje',
     }}
     disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      label: 'Al enviar este formulario aceptas que te contactemos sobre tu solicitud.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Respondemos en menos de un día hábil."
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
+    title="El equipo correcto para tu proyecto"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
+        title: 'Proyectos y entregas',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Define con nosotros el alcance, roadmap y stack. Trabajamos web, móvil, POS y backend con squads completos.',
       },
       {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        title: 'Ventas y estimaciones',
+        description: 'Cotiza un MVP, una nueva vertical o soporte de producción. Enviamos tiempos y costos estimados.',
       },
       {
-        title: 'Phone',
+        title: 'Soporte técnico',
+        description: 'Integraciones, despliegues, CI/CD, monitoreo y hardening para tu producto en producción.',
+      },
+      {
+        title: 'Teléfono',
         description: '+1 (234) 567-890',
         icon: 'tabler:headset',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'hola@llamadevs.com',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'Ubicación',
+        description: 'Remoto · LATAM / EEUU',
         icon: 'tabler:map-pin',
       },
     ]}
