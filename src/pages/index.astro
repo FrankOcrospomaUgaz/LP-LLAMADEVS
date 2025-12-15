@@ -223,9 +223,12 @@ const caseStudy = {
           </div>
         </div>
 
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          {verticals.map((card) => (
-            <div id={card.id} class="overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 shadow-xl">
+          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            {verticals.map((card) => (
+              <div
+                id={card.id}
+                class="overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 shadow-xl scroll-mt-32 md:scroll-mt-36"
+              >
               <div class="relative h-44 overflow-hidden">
                 <img src={card.image} alt={card.title} loading="lazy" class="h-full w-full object-cover object-center" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>

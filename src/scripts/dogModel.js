@@ -5,13 +5,16 @@ import {
   Clock,
   Color,
   DirectionalLight,
+  HemisphereLight,
   LoopRepeat,
+  ACESFilmicToneMapping,
   PerspectiveCamera,
   Scene,
   SRGBColorSpace,
   WebGLRenderer,
 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const CONTAINER_ID = 'llamadevs-model-container';
 
@@ -26,6 +29,8 @@ const startDogModel = () => {
 
   const renderer = new WebGLRenderer({ antialias: true, alpha: true });
   renderer.outputColorSpace = SRGBColorSpace;
+  renderer.toneMapping = ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.2;
   renderer.setClearColor(new Color(0x000000), 0);
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
@@ -34,13 +39,32 @@ const startDogModel = () => {
   container.appendChild(renderer.domElement);
 
   const camera = new PerspectiveCamera(45, 1, 0.1, 100);
-  camera.position.set(0, 1.25, 3.4);
-  camera.lookAt(0, 0.8, 0);
+  camera.position.set(0, 1.25, 3.1);
+  camera.lookAt(0, 0.75, 0);
 
-  scene.add(new AmbientLight(0xffffff, 0.8));
-  const directionalLight = new DirectionalLight(0xffffff, 0.9);
-  directionalLight.position.set(3, 5, 4);
-  scene.add(directionalLight);
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.minDistance = 1.5;
+  controls.maxDistance = 3;
+  controls.target.set(0, 0.75, 0);
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.8;
+
+  scene.add(new AmbientLight(0xffffff, 1.4));
+  const hemi = new HemisphereLight(0xfff7e8, 0xf2e5d6, 1.1);
+  scene.add(hemi);
+
+  const keyLight = new DirectionalLight(0xffffff, 1.6);
+  keyLight.position.set(3.2, 5.6, 4.2);
+
+  const fillLight = new DirectionalLight(0xfff3e1, 0.8);
+  fillLight.position.set(-2.4, 3.2, 2.6);
+
+  const rimLight = new DirectionalLight(0xffffff, 0.6);
+  rimLight.position.set(0, 4.4, -3.5);
+
+  scene.add(keyLight, fillLight, rimLight);
 
   const loader = new GLTFLoader();
   const clock = new Clock();
@@ -72,6 +96,19 @@ const startDogModel = () => {
       model = gltf.scene;
       scene.add(model);
 
+      model.traverse((child) => {
+        if (child.isMesh && child.material && child.material.color) {
+          child.material.color.multiplyScalar(1.12);
+          child.material.roughness = Math.min(child.material.roughness ?? 0.6, 0.5);
+          child.material.metalness = 0;
+          if (child.material.emissive) {
+            child.material.emissive.set(0xfff2d5);
+            child.material.emissiveIntensity = 0.08;
+          }
+          child.material.needsUpdate = true;
+        }
+      });
+
       mixer = new AnimationMixer(model);
       gltf.animations.forEach((clip) => {
         const action = mixer.clipAction(clip);
@@ -93,7 +130,7 @@ const startDogModel = () => {
     const delta = clock.getDelta();
 
     if (mixer) mixer.update(delta);
-    if (model) model.rotation.y -= delta * 0.15;
+    controls.update();
 
     renderer.render(scene, camera);
     frameId = requestAnimationFrame(renderScene);
@@ -110,6 +147,7 @@ const startDogModel = () => {
   const cleanup = () => {
     if (frameId) cancelAnimationFrame(frameId);
     window.removeEventListener('resize', handleResize);
+    controls.dispose();
     renderer.dispose();
     container.innerHTML = '';
   };
