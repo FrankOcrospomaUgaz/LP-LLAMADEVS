@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+import dogModelScript from '~/scripts/dogModel.js?url';
 
 const metadata = {
   title: 'llamadevs - Software y SaaS premium para hospitality y retail',
@@ -166,9 +167,15 @@ const caseStudy = {
       </div>
     </section>
 
-    <script type="module">
-      import '~/scripts/dogModel.js';
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+          "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+        }
+      }
     </script>
+    <script type="module" src={dogModelScript}></script>
 
     <!-- Logos -->
     <section class="bg-page dark:bg-slate-950 pb-12 pt-6 text-muted dark:text-slate-300">
