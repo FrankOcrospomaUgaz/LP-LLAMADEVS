@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
-import dogModelScript from '~/scripts/dogModel.js?url';
 
 const metadata = {
   title: 'llamadevs - Software y SaaS premium para hospitality y retail',
@@ -167,7 +166,9 @@ const caseStudy = {
       </div>
     </section>
 
-    <script type="module" src={dogModelScript} is:inline></script>
+    <script type="module">
+      import '~/scripts/dogModel.js';
+    </script>
 
     <!-- Logos -->
     <section class="bg-page dark:bg-slate-950 pb-12 pt-6 text-muted dark:text-slate-300">
