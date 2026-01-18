@@ -16,60 +16,63 @@ const heroStats = [
 ];
 
 const clients = ['Grupo Cumbre', 'Orion Hotels', 'Alma Retail', 'Nova Foods', 'ServiPOS Cloud', 'Blue Harbor'];
+const marqueeClients = [...clients, ...clients];
 
 const featureCards = [
   {
     icon: 'tabler:bolt',
     title: 'Go-live acelerado',
-    description: 'Squads mixtos (PM, UX, FE, BE, QA) con entregas quincenales y QA automatizado.',
+    description: 'Squads senior + QA automatizado desde el dia uno.',
   },
   {
     icon: 'tabler:shield-lock',
     title: 'Seguridad y compliance',
-    description: 'Hardening, observabilidad, backups en caliente y privacidad por defecto.',
+    description: 'Hardening, backups en caliente y compliance real.',
   },
   {
     icon: 'tabler:devices',
     title: 'Infra multicanal',
-    description: 'Web, moviles, kioscos y POS con la misma base de diseno y tokens de marca.',
+    description: 'Web, kioscos y POS con una sola base de diseno.',
   },
   {
     icon: 'tabler:cloud-upload',
     title: 'Deploy sin friccion',
-    description: 'Pipelines CI/CD con rollbacks rapidos, feature flags y monitoreo de errores centralizado.',
+    description: 'CI/CD con rollbacks y alertas en tiempo real.',
   },
   {
     icon: 'tabler:credit-card',
     title: 'Cobros y planes listos',
-    description: 'Stripe o Paddle, limites de uso, trials y facturacion recurrente integrados al producto.',
+    description: 'Cobros, trials y facturacion listos para vender.',
   },
   {
     icon: 'tabler:sparkles',
     title: 'AI/Insights aplicados',
-    description: 'Resumenes operativos, deteccion de anomalias y recomendaciones accionables por vertical.',
+    description: 'Insights operativos y alertas accionables.',
   },
 ];
+
+const featureHighlights = ['QA automatizado', 'Demos quincenales', 'Roadmap + KPIs'];
 
 const verticals = [
   {
     id: 'restaurantes',
     title: 'Restaurante OS',
     image:
-      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80',
     bullets: ['Ordenes omnicanal (salon, delivery, kiosco)', 'Kitchen display system', 'Control de mermas y costos'],
   },
   {
     id: 'hoteles',
     title: 'Hotel y Villas',
     image:
-      'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80',
     bullets: ['PMS + channel manager', 'Check-in sin friccion', 'Upsell de servicios y fidelizacion'],
   },
   {
     id: 'retail',
     title: 'Retail / POS',
     image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
     bullets: ['POS offline-first', 'Inventarios en tiempo real', 'Integracion e-commerce y ERPs'],
   },
 ];
@@ -78,17 +81,17 @@ const services = [
   {
     icon: 'tabler:stack-2',
     title: 'Producto a medida',
-    description: 'Definicion de alcance, prototipos, diseno de servicio y lanzamiento end-to-end.',
+    description: 'Alcance claro, prototipos y lanzamiento end-to-end.',
   },
   {
     icon: 'tabler:plug-connected',
     title: 'Integraciones criticas',
-    description: 'ERPs, pagos, biometria, contabilidad y data warehouses con monitoreo activo.',
+    description: 'ERPs, pagos y data pipelines con monitoreo activo.',
   },
   {
     icon: 'tabler:headset',
     title: 'Operacion y soporte',
-    description: 'Playbooks, NOC, SLAs estrictos, alertas y handoffs directos con tus equipos.',
+    description: 'Playbooks, NOC y SLAs listos para escalar.',
   },
 ];
 
@@ -110,7 +113,7 @@ const caseStudy = {
     'Integracion contable + delivery partners + facturacion electronica',
   ],
   image:
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
 };
 ---
 
@@ -119,47 +122,83 @@ const caseStudy = {
     <!-- Hero -->
     <section class="relative overflow-hidden">
       <div class="pointer-events-none absolute inset-0">
-        <div class="absolute -left-16 top-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl"></div>
-        <div class="absolute right-10 top-24 h-64 w-64 rounded-full bg-secondary/25 blur-3xl"></div>
-        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/70 via-transparent to-transparent dark:from-black/60"></div>
+        <div class="absolute inset-0 bg-grid opacity-60 dark:bg-grid-dark"></div>
+        <div class="absolute -left-24 top-8 h-72 w-72 rounded-full bg-primary/25 blur-[120px] animate-float"></div>
+        <div class="absolute right-[-6rem] top-24 h-64 w-64 rounded-full bg-secondary/25 blur-[120px] animate-float"></div>
+        <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#f5f3ee] via-transparent to-transparent dark:from-[#070a12]"></div>
       </div>
-      <div class="relative mx-auto max-w-7xl px-4 pb-14 pt-6 sm:pt-10 lg:pt-12">
-        <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div class="space-y-6">
-            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl text-default dark:text-slate-100">
+      <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-8 sm:pt-12 lg:pt-16">
+        <div class="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div class="space-y-6 animate-fade">
+            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-slate-200">
+              <span class="h-2 w-2 rounded-full bg-primary"></span>
+              SaaS para el sector retail
+            </div>
+            <h1 class="text-4xl font-heading font-semibold leading-[1.05] text-default dark:text-slate-100 sm:text-5xl lg:text-6xl">
               llamadevs:
-              <span class="text-primary">software premium</span> para restaurantes, hoteles y puntos de venta.
+              <span class="text-primary">software premium</span> que convierte operaciones en ingresos.
             </h1>
-            <p class="max-w-2xl text-lg text-default dark:text-slate-200">
-              Construimos y operamos SaaS listos para produccion. Experiencia en hospitality, retail y fintech con
-              integraciones complejas, soporte 24/7 y lanzamientos en semanas.
+            <p class="max-w-xl text-lg text-muted dark:text-slate-200">
+              SaaS listos para produccion con integraciones criticas y soporte 24/7.
             </p>
             <div class="flex flex-wrap gap-3">
-              <a class="btn btn-primary shadow-lg shadow-primary/40" href="/contact">Agenda demo</a>
-              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/50" href="#stack">
+              <a class="btn btn-primary shadow-lg shadow-primary/30" href="/contact">Agenda demo</a>
+              <a class="btn border-slate-300/70 bg-white/70 text-default hover:bg-white dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10" href="#stack">
                 Ver stack
               </a>
-              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/50" href="#casos">
+              <a class="btn border-slate-300/70 bg-white/70 text-default hover:bg-white dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10" href="#casos">
                 Casos reales
               </a>
             </div>
-            <div class="flex flex-wrap gap-6 pt-2 text-sm text-default dark:text-slate-200">
+            <div class="flex flex-wrap gap-2 text-xs text-muted dark:text-slate-300">
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/5">
+                <Icon name="tabler:code" class="h-4 w-4 text-primary" />
+                Arquitectura limpia
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/5">
+                <Icon name="tabler:rocket" class="h-4 w-4 text-primary" />
+                DevOps serio
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/5">
+                <Icon name="tabler:layout-dashboard" class="h-4 w-4 text-primary" />
+                Interfaces premium
+              </span>
+            </div>
+            <div class="grid gap-3 pt-2 sm:grid-cols-3">
               {heroStats.map((item) => (
-                <div class="flex items-center gap-3 rounded-full border border-white/10 bg-white px-4 py-2 shadow-sm dark:bg-white/5">
-                  <Icon name="tabler:check" class="h-5 w-5 text-primary" />
-                  <span class="font-semibold">{item.label} - {item.value}</span>
+                <div class="relative overflow-hidden rounded-2xl border border-white/60 bg-white/80 px-4 py-4 shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/5">
+                  <div class="absolute -right-4 -top-4 h-12 w-12 rounded-full bg-primary/10"></div>
+                  <p class="text-xl font-semibold text-default dark:text-white">{item.value}</p>
+                  <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted dark:text-slate-300">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div class="relative flex items-center justify-center">
-            <div
-              id="llamadevs-model-container"
-              class="w-full max-w-[680px] h-[520px] sm:h-[560px] lg:h-[600px]"
-            >
-              <div class="flex h-full items-center justify-center text-sm text-muted dark:text-slate-200">
-                Cargando modelo 3D...
+            <div class="absolute -inset-10 rounded-full bg-gradient-to-br from-primary/20 via-transparent to-secondary/30 blur-3xl"></div>
+            <div class="relative w-full max-w-[680px]">
+              <div
+                id="llamadevs-model-container"
+                class="relative h-[520px] w-full animate-float sm:h-[560px] lg:h-[600px]"
+              >
+                <div class="flex h-full items-center justify-center text-sm text-muted dark:text-slate-200">
+                  Cargando modelo 3D...
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-6 rounded-full border border-white/20 dark:border-white/10"></div>
+              <div class="pointer-events-none absolute inset-12 rounded-full border border-primary/30 animate-[spin_18s_linear_infinite]"></div>
+              <div class="pointer-events-none absolute -left-2 top-12 rounded-2xl border border-white/60 bg-white/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-lg dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
+                Uptime 99.95%
+              </div>
+              <div class="pointer-events-none absolute -right-2 top-24 rounded-2xl border border-white/60 bg-white/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-lg dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
+                Latency 120ms
+              </div>
+              <div class="pointer-events-none absolute left-10 bottom-4 rounded-2xl border border-white/60 bg-white/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-lg dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
+                Deploy OK
+              </div>
+              <div class="pointer-events-none absolute right-10 bottom-8 rounded-2xl border border-white/60 bg-white/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-lg dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
+                Render 60fps
               </div>
             </div>
           </div>
@@ -170,40 +209,68 @@ const caseStudy = {
     <script type="module" src={dogModelScript}></script>
 
     <!-- Logos -->
-    <section class="bg-page dark:bg-slate-950 pb-12 pt-6 text-muted dark:text-slate-300">
+    <section class="bg-page dark:bg-slate-950 pb-14 pt-4 text-muted dark:text-slate-300">
       <div class="mx-auto max-w-6xl px-4">
-        <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Equipos que ya confian</p>
-        <div class="mt-6 grid grid-cols-2 gap-6 text-lg font-semibold uppercase sm:grid-cols-3 md:grid-cols-6">
-          {clients.map((logo) => (
-            <div class="rounded-xl border border-white/10 bg-white px-4 py-3 text-center text-default shadow-sm dark:bg-white/5 dark:text-slate-100">
-              {logo}
-            </div>
-          ))}
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
+            Equipos que ya confian
+          </p>
+          <a class="text-xs font-semibold uppercase tracking-[0.24em] text-primary hover:text-secondary" href="#casos">
+            Ver impacto real
+          </a>
+        </div>
+        <div class="group relative mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/70 shadow-sm backdrop-blur dark:bg-white/5">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/60 via-white/10 to-white/60 opacity-70 dark:from-white/5 dark:via-transparent dark:to-white/5"></div>
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#f5f3ee] to-transparent dark:from-[#070a12]"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#f5f3ee] to-transparent dark:from-[#070a12]"></div>
+          <div class="relative flex w-max gap-4 px-4 py-5 animate-marquee [animation-duration:26s] will-change-transform motion-reduce:animate-none group-hover:[animation-play-state:paused]">
+            {marqueeClients.map((logo, index) => (
+              <div
+                class="flex min-w-[180px] items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-700 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-slate-200 sm:min-w-[200px]"
+                aria-hidden={index >= clients.length ? 'true' : undefined}
+              >
+                <span class="h-2 w-2 rounded-full bg-primary/70"></span>
+                <span class="whitespace-nowrap">{logo}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Features -->
-    <section id="features" class="bg-white dark:bg-slate-900 py-16 text-default dark:text-slate-100">
+    <section id="features" class="bg-white dark:bg-slate-950 py-20 text-default dark:text-slate-100">
       <div class="mx-auto max-w-6xl px-4">
-        <div class="max-w-3xl space-y-3">
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Por que llamadevs</p>
-          <h2 class="text-3xl font-semibold sm:text-4xl">Producto listo para cobrar, no solo prototipos.</h2>
-          <p class="text-lg text-muted">
+        <div class="max-w-3xl space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Por que llamadevs</p>
+          <h2 class="text-3xl font-heading font-semibold sm:text-4xl">Producto listo para cobrar, no solo prototipos.</h2>
+          <p class="text-lg text-muted dark:text-slate-300">
             Arquitectura, diseno y operacion pensados para hospitality y retail: multiples sedes, integraciones criticas
             y soporte continuo.
           </p>
         </div>
 
-        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {featureCards.map((item) => (
-            <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 p-6 shadow-xl backdrop-blur transition hover:-translate-y-1 hover:border-primary/50">
-              <div class="mb-4 inline-flex items-center gap-3 rounded-full bg-primary/10 px-3 py-2 text-sm font-medium">
-                <Icon name={item.icon} class="h-5 w-5 text-primary" />
-                <span>{item.title}</span>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          {featureCards.map((item, index) => (
+            <article class={`group relative flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 ${index === 0 ? 'lg:col-span-2' : ''}`}>
+              <div class="flex items-center justify-between">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+                  <Icon name={item.icon} class="h-6 w-6 text-primary" />
+                </div>
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-muted dark:text-slate-300">0{index + 1}</span>
               </div>
+              <h3 class="text-xl font-semibold text-default dark:text-slate-100">{item.title}</h3>
               <p class="text-muted dark:text-slate-300">{item.description}</p>
-              <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+              {index === 0 && (
+                <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                  {featureHighlights.map((highlight) => (
+                    <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-semibold text-primary">
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <div class="mt-auto h-px w-full bg-gradient-to-r from-primary/40 via-transparent to-secondary/40 opacity-0 transition group-hover:opacity-100" />
             </article>
           ))}
         </div>
@@ -211,36 +278,44 @@ const caseStudy = {
     </section>
 
     <!-- Verticals -->
-    <section id="soluciones" class="bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
-      <div class="mx-auto max-w-6xl px-4">
+    <section id="soluciones" class="relative bg-page py-20 text-default dark:bg-[#0b0f1c] dark:text-slate-100">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute right-0 top-10 h-64 w-64 rounded-full bg-accent/20 blur-[120px]"></div>
+      </div>
+      <div class="relative mx-auto max-w-6xl px-4">
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Soluciones por vertical</p>
-            <h2 class="text-3xl font-semibold sm:text-4xl">Construido para operar en el mundo real.</h2>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Soluciones por vertical</p>
+            <h2 class="text-3xl font-heading font-semibold sm:text-4xl">Construido para operar en el mundo real.</h2>
           </div>
-          <div class="text-muted dark:text-slate-300">
+          <div class="max-w-lg text-muted dark:text-slate-300">
             Integraciones con pagos, ERPs, channel managers y contabilidad. Control total sobre datos y experiencia.
           </div>
         </div>
 
-          <div class="mt-10 grid gap-6 lg:grid-cols-3">
-            {verticals.map((card) => (
-              <div
-                id={card.id}
-                class="overflow-hidden rounded-2xl border border-white/10 bg-white dark:bg-white/5 shadow-xl scroll-mt-32 md:scroll-mt-36"
-              >
-              <div class="relative h-44 overflow-hidden">
-                <img src={card.image} alt={card.title} loading="lazy" class="h-full w-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-                <p class="absolute bottom-3 left-4 text-lg font-semibold text-white">{card.title}</p>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          {verticals.map((card) => (
+            <div
+              id={card.id}
+              class="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 scroll-mt-32 md:scroll-mt-36"
+            >
+              <div class="relative h-48 overflow-hidden">
+                <img src={card.image} alt={card.title} loading="lazy" class="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/40 to-transparent"></div>
+                <div class="absolute bottom-4 left-4">
+                  <p class="text-xs uppercase tracking-[0.2em] text-slate-200/80">Vertical</p>
+                  <p class="text-lg font-semibold text-white">{card.title}</p>
+                </div>
               </div>
               <div class="space-y-3 p-5">
-                {card.bullets.map((bullet) => (
-                  <p class="flex items-start gap-2 text-default dark:text-slate-200">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
-                    <span>{bullet}</span>
-                  </p>
-                ))}
+                <ul class="space-y-2 text-default dark:text-slate-200">
+                  {card.bullets.map((bullet) => (
+                    <li class="flex items-start gap-2">
+                      <span class="mt-2 h-2 w-2 rounded-full bg-accent"></span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
                 <a class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary" href="/contact">
                   Hablar con ventas
                   <Icon name="tabler:arrow-right" class="h-4 w-4" />
@@ -253,18 +328,21 @@ const caseStudy = {
     </section>
 
     <!-- Servicios -->
-    <section id="servicios" class="bg-white dark:bg-slate-900 py-16 text-default dark:text-slate-100">
+    <section id="servicios" class="bg-white dark:bg-slate-950 py-20 text-default dark:text-slate-100">
       <div class="mx-auto max-w-6xl px-4">
-        <div class="max-w-3xl space-y-3">
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Servicios</p>
-          <h2 class="text-3xl font-semibold sm:text-4xl">Todo el ciclo: estrategia, delivery y operacion.</h2>
+        <div class="max-w-3xl space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Servicios</p>
+          <h2 class="text-3xl font-heading font-semibold sm:text-4xl">Todo el ciclo: estrategia, delivery y operacion.</h2>
         </div>
 
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          {services.map((item) => (
-            <div class="rounded-2xl border border-white/10 bg-white dark:bg-white/5 p-6 shadow-xl">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15">
-                <Icon name={item.icon} class="h-6 w-6 text-primary" />
+          {services.map((item, index) => (
+            <div class="group rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5">
+              <div class="mb-4 flex items-center justify-between">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15">
+                  <Icon name={item.icon} class="h-6 w-6 text-primary" />
+                </div>
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-muted dark:text-slate-300">0{index + 1}</span>
               </div>
               <p class="text-lg font-semibold">{item.title}</p>
               <p class="mt-3 text-muted dark:text-slate-300">{item.description}</p>
@@ -279,19 +357,22 @@ const caseStudy = {
     </section>
 
     <!-- Stack -->
-    <section id="stack" class="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
-      <div class="mx-auto max-w-6xl px-4">
+    <section id="stack" class="relative bg-gradient-to-r from-[#f1ede6] via-[#f8f6f2] to-[#f1ede6] dark:from-[#070a12] dark:via-[#0d1220] dark:to-[#070a12] py-20 text-default dark:text-slate-100">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute left-0 top-10 h-64 w-64 rounded-full bg-primary/15 blur-[120px]"></div>
+      </div>
+      <div class="relative mx-auto max-w-6xl px-4">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div class="space-y-4">
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Stack y entregables</p>
-            <h2 class="text-3xl font-semibold sm:text-4xl">Diseno, dev y observabilidad en un solo equipo.</h2>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Stack y entregables</p>
+            <h2 class="text-3xl font-heading font-semibold sm:text-4xl">Diseno, dev y observabilidad en un solo equipo.</h2>
             <p class="text-lg text-default dark:text-slate-200">
               Playbooks de seguridad, manuales de soporte y paneles operativos. Documentamos todo y entregamos acceso a
               repositorios, tableros y monitoreo.
             </p>
             <div class="flex flex-wrap gap-3 text-default dark:text-slate-300">
               {stackItems.map((item) => (
-                <span class="flex items-center gap-2 rounded-full border border-white/15 bg-white px-3 py-2 text-sm shadow-sm dark:bg-white/10">
+                <span class="flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/80 px-3 py-2 text-sm shadow-sm dark:border-white/15 dark:bg-white/10">
                   <Icon name={item.icon} class="h-5 w-5 text-primary" />
                   {item.label}
                 </span>
@@ -299,27 +380,28 @@ const caseStudy = {
             </div>
           </div>
 
-          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white dark:bg-[#0f1428] p-6 shadow-2xl backdrop-blur">
+          <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-white/80 p-6 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-white/5">
+            <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-secondary/15 blur-3xl"></div>
             <div class="flex items-center justify-between text-default dark:text-slate-100">
               <p class="text-sm text-default dark:text-slate-300">Estado de despliegue</p>
-              <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-500 dark:text-emerald-300">Healthy</span>
+              <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-300">Healthy</span>
             </div>
             <div class="mt-4 space-y-3 text-sm">
-              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+              <div class="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2 text-default shadow-sm dark:bg-white/5 dark:text-slate-200">
                 <span class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-emerald-500" />
                   Frontend (Astro + React)
                 </span>
                 <span class="font-semibold text-default dark:text-white">Deploy OK</span>
               </div>
-              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+              <div class="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2 text-default shadow-sm dark:bg-white/5 dark:text-slate-200">
                 <span class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-sky-400" />
                   Integraciones Stripe / ERP
                 </span>
                 <span class="font-semibold text-default dark:text-white">Sync en curso</span>
               </div>
-              <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-default dark:bg-white/5 dark:text-slate-200">
+              <div class="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2 text-default shadow-sm dark:bg-white/5 dark:text-slate-200">
                 <span class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-amber-400" />
                   Monitoreo y alertas
@@ -327,7 +409,7 @@ const caseStudy = {
                 <span class="font-semibold text-default dark:text-white">Tuning</span>
               </div>
             </div>
-            <div class="mt-6 rounded-2xl border border-white/10 bg-white p-4 text-left text-xs font-mono text-emerald-600 dark:bg-white/5 dark:text-emerald-200">
+            <div class="mt-6 rounded-2xl border border-white/15 bg-white/80 p-4 text-left text-xs font-mono text-emerald-600 dark:border-white/10 dark:bg-white/5 dark:text-emerald-200">
               <p class="mb-2 text-muted dark:text-slate-300">Checklist de release</p>
               <ul class="space-y-1 text-[11px] text-default dark:text-slate-200">
                 <li>1. Feature flags activados</li>
@@ -344,13 +426,13 @@ const caseStudy = {
   
 
     <!-- Case study -->
-    <section id="casos" class="bg-white dark:bg-slate-950 py-16 text-default dark:text-slate-100">
+    <section id="casos" class="bg-white dark:bg-slate-950 py-20 text-default dark:text-slate-100">
       <div class="mx-auto max-w-6xl px-4">
         <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div class="space-y-4">
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Caso destacado</p>
-            <h2 class="text-3xl font-semibold sm:text-4xl">{caseStudy.title}</h2>
-            <p class="text-lg text-secondary font-semibold">{caseStudy.highlight}</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Caso destacado</p>
+            <h2 class="text-3xl font-heading font-semibold sm:text-4xl">{caseStudy.title}</h2>
+            <p class="text-lg font-semibold text-secondary">{caseStudy.highlight}</p>
             <ul class="space-y-2 text-default dark:text-slate-200">
               {caseStudy.bullets.map((bullet) => (
                 <li class="flex items-start gap-2">
@@ -361,20 +443,20 @@ const caseStudy = {
             </ul>
             <div class="flex flex-wrap gap-3 pt-2">
               <a class="btn btn-primary shadow-lg shadow-primary/30" href="/contact">Agendar llamada</a>
-              <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40" href="/pricing">
+              <a class="btn border-slate-300/70 bg-white/70 text-default hover:bg-white dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10" href="/pricing">
                 Ver planes
               </a>
             </div>
           </div>
-          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/80 dark:bg-black/40 shadow-2xl">
+          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/80 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-black/40">
             <img src={caseStudy.image} alt={caseStudy.title} loading="lazy" class="h-full w-full object-cover object-center" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div class="absolute bottom-4 left-4 space-y-2">
-              <p class="text-sm uppercase tracking-[0.18em] text-muted dark:text-slate-300">Observabilidad</p>
-              <div class="flex gap-3 text-sm">
-                <span class="rounded-full bg-white/10 px-3 py-1 text-white">SLA 99.95%</span>
-                <span class="rounded-full bg-white/10 px-3 py-1 text-white">Load Balancing</span>
-                <span class="rounded-full bg-white/10 px-3 py-1 text-white">PCI-ready</span>
+              <p class="text-xs uppercase tracking-[0.2em] text-slate-200/80">Observabilidad</p>
+              <div class="flex flex-wrap gap-2 text-xs text-white">
+                <span class="rounded-full bg-white/10 px-3 py-1">SLA 99.95%</span>
+                <span class="rounded-full bg-white/10 px-3 py-1">Load Balancing</span>
+                <span class="rounded-full bg-white/10 px-3 py-1">PCI-ready</span>
               </div>
             </div>
           </div>
@@ -383,11 +465,15 @@ const caseStudy = {
     </section>
 
     <!-- CTA -->
-    <section id="contact" class="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-[#0b0b15] dark:to-slate-950 py-16 text-default dark:text-slate-100">
-      <div class="mx-auto max-w-5xl px-4">
-        <div class="rounded-3xl border border-white/10 bg-white px-6 py-10 text-center shadow-2xl backdrop-blur dark:bg-[#0f1428]">
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Listo para produccion</p>
-          <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">
+    <section id="contact" class="relative bg-gradient-to-r from-[#f1ede6] via-[#f8f6f2] to-[#f1ede6] dark:from-[#070a12] dark:via-[#0d1220] dark:to-[#070a12] py-20 text-default dark:text-slate-100">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]"></div>
+      </div>
+      <div class="relative mx-auto max-w-5xl px-4">
+        <div class="relative overflow-hidden rounded-3xl border border-white/20 bg-white/80 px-8 py-12 text-center shadow-2xl backdrop-blur dark:border-white/10 dark:bg-white/5">
+          <div class="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-secondary/20 blur-[80px]"></div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Listo para produccion</p>
+          <h2 class="mt-3 text-3xl font-heading font-semibold sm:text-4xl">
             Agenda una demo y llevamos tu producto en semanas, no meses.
           </h2>
           <p class="mt-3 text-lg text-default dark:text-slate-200">
@@ -395,9 +481,14 @@ const caseStudy = {
           </p>
           <div class="mt-6 flex flex-wrap justify-center gap-3">
             <a class="btn btn-primary shadow-lg shadow-primary/30" href="/contact">Hablar con ventas</a>
-            <a class="btn border-slate-300 bg-white text-default hover:bg-slate-100 hover:border-slate-400 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40" href="/pricing">
+            <a class="btn border-slate-300/70 bg-white/70 text-default hover:bg-white dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white/10" href="/pricing">
               Ver planes
             </a>
+          </div>
+          <div class="mt-8 flex flex-wrap justify-center gap-3 text-xs text-muted dark:text-slate-300">
+            <span class="rounded-full border border-white/40 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/10">Roadmap + KPIs</span>
+            <span class="rounded-full border border-white/40 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/10">Compliance y seguridad</span>
+            <span class="rounded-full border border-white/40 bg-white/80 px-3 py-1 shadow-sm dark:border-white/10 dark:bg-white/10">Equipo senior dedicado</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 ---
-import '@fontsource-variable/inter';
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/space-grotesk';
 
 // 'DM Sans'
 // Nunito
@@ -21,44 +22,48 @@ import '@fontsource-variable/inter';
 
 <style is:inline>
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'DM Sans Variable';
+    --aw-font-serif: 'DM Sans Variable';
+    --aw-font-heading: 'Space Grotesk Variable';
 
-    --aw-color-primary: rgb(99 102 241);
-    --aw-color-secondary: rgb(56 189 248);
-    --aw-color-accent: rgb(251 191 36);
+    --aw-color-primary: 8 145 178;
+    --aw-color-secondary: 234 88 12;
+    --aw-color-accent: 163 230 53;
 
-    --aw-color-text-heading: rgb(24 30 45);
-    --aw-color-text-default: rgb(32 37 52);
-    --aw-color-text-muted: rgb(32 37 52 / 70%);
-    --aw-color-bg-page: rgb(246 248 252);
+    --aw-color-text-heading: 13 18 27;
+    --aw-color-text-default: 23 29 37;
+    --aw-color-text-muted: 23 29 37;
+    --aw-color-text-muted-alpha: 0.68;
+    --aw-color-text-page: var(--aw-color-text-default);
+    --aw-color-bg-page: 245 243 238;
 
-    --aw-color-bg-page-dark: rgb(4 5 12);
+    --aw-color-bg-page-dark: 7 10 18;
 
     ::selection {
-      background-color: rgba(79, 26, 214, 0.25);
-      color: snow;
+      background-color: rgba(8, 145, 178, 0.25);
+      color: #f8fafc;
     }
   }
 
   .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'DM Sans Variable';
+    --aw-font-serif: 'DM Sans Variable';
+    --aw-font-heading: 'Space Grotesk Variable';
 
-    --aw-color-primary: rgb(99 102 241);
-    --aw-color-secondary: rgb(56 189 248);
-    --aw-color-accent: rgb(251 191 36);
+    --aw-color-primary: 34 211 238;
+    --aw-color-secondary: 251 146 60;
+    --aw-color-accent: 190 242 100;
 
-    --aw-color-text-heading: rgb(245 248 255);
-    --aw-color-text-default: rgb(226 231 245);
-    --aw-color-text-muted: rgb(226 231 245 / 70%);
-    --aw-color-bg-page: rgb(4 5 12);
+    --aw-color-text-heading: 239 246 255;
+    --aw-color-text-default: 226 231 245;
+    --aw-color-text-muted: 226 231 245;
+    --aw-color-text-muted-alpha: 0.7;
+    --aw-color-text-page: var(--aw-color-text-default);
+    --aw-color-bg-page: 7 10 18;
 
     ::selection {
-      background-color: rgba(79, 26, 214, 0.25);
-      color: snow;
+      background-color: rgba(34, 211, 238, 0.28);
+      color: #f8fafc;
     }
   }
 </style>
