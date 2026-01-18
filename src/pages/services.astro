@@ -7,7 +7,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'Servicios - llamadevs',
 };
 ---
 
@@ -15,74 +15,55 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    tagline="Servicios"
+    title="Producto y tecnologia para operar sin friccion"
+    subtitle="Squads senior para hospitality y retail: discovery, integraciones criticas y soporte 24/7."
+    actions={[
+      { variant: 'primary', text: 'Agenda demo', href: '/contact' },
+      { variant: 'secondary', text: 'Ver casos', href: '/#casos' },
+    ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80',
+      alt: 'Dashboard operativo',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="Servicios core"
+    subtitle="Equipos completos para llevar tu vertical a produccion con calidad y velocidad."
     columns={3}
     items={[
       {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+        title: 'Squad completo',
+        description: 'PM, UX, FE, BE y QA listos para operar.',
+        icon: 'tabler:users-group',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+        title: 'Discovery y UX',
+        description: 'Flujos claros, prototipos y validacion rapida.',
+        icon: 'tabler:layout-dashboard',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
+        title: 'Integraciones criticas',
+        description: 'Pagos, ERP, contabilidad, BI y legacy.',
+        icon: 'tabler:plug-connected',
       },
       {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
+        title: 'QA automatizado',
+        description: 'Suites de pruebas para evitar regresiones.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
+        title: 'SRE y observabilidad',
+        description: 'Alertas, trazas y dashboards en tiempo real.',
+        icon: 'tabler:activity',
       },
       {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
+        title: 'Data y BI',
+        description: 'Modelos de datos listos para analitica.',
+        icon: 'tabler:chart-bar',
       },
     ]}
   />
@@ -93,37 +74,33 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'High-Quality Designs',
-        description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+        title: 'Discovery y roadmap',
+        description: 'Definimos alcance, riesgos y entregables por fase.',
+        icon: 'tabler:map',
       },
       {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+        title: 'Delivery continuo',
+        description: 'Sprints quincenales con demos y feedback real.',
+        icon: 'tabler:repeat',
       },
       {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
+        title: 'QA automatizado',
+        description: 'Quality gates para releases estables.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+        title: 'Control de costos',
+        description: 'Infra optimizada y monitoreo de performance.',
+        icon: 'tabler:currency-dollar',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80',
+      alt: 'Pagos y operaciones',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Como trabajamos</h3>
     </Fragment>
   </Content>
 
@@ -133,77 +110,72 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
+        title: 'Menos caidas',
+        description: 'SLA y alertas para evitar interrupciones.',
+        icon: 'tabler:alarm',
       },
       {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+        title: 'Operaciones mas rapidas',
+        description: 'Flujos optimizados para front y back office.',
+        icon: 'tabler:bolt',
       },
       {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
+        title: 'Escala multi-sede',
+        description: 'Arquitectura lista para crecer sin friccion.',
+        icon: 'tabler:building-community',
       },
       {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+        title: 'Analitica en tiempo real',
+        description: 'KPIs y alertas por sede y canal.',
+        icon: 'tabler:chart-line',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      src: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=900&q=80',
+      alt: 'Equipo de producto',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Resultados en operacion</h3>
     </Fragment>
   </Content>
 
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
-    title="Words from real customers"
+    title="Equipos que ya operan con nosotros"
     testimonials={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
+        testimonial: `Reducimos tiempos de cierre y mejoramos el control de costos desde el primer mes.`,
+        name: 'Carlos Vega',
+        job: 'COO, Orion Hotels',
         image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+          alt: 'Carlos Vega',
         },
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
+        testimonial: `El POS y los reportes por sede nos dieron visibilidad real de la operacion.`,
+        name: 'Lucia Ramos',
+        job: 'Head of Ops, Alma Retail',
         image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+          src: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=800&q=80',
+          alt: 'Lucia Ramos',
         },
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
+        testimonial: `La integracion con pagos y ERP fue rapida y sin friccion para nuestro equipo.`,
+        name: 'Diego Paredes',
+        job: 'CTO, Grupo Cumbre',
         image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+          alt: 'Diego Paredes',
         },
       },
     ]}
     callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
+      text: 'Agendar demo',
+      href: '/contact',
       icon: 'tabler:chevron-right',
     }}
   />
@@ -214,11 +186,16 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Agenda demo',
+        href: '/contact',
+      },
+      {
+        variant: 'secondary',
+        text: 'Ver stack',
+        href: '/#stack',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    title="Listos para lanzar tu vertical"
+    subtitle="Cuadramos discovery y roadmap en 7 dias."
   />
 </Layout>
